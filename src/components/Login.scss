@@ -1,0 +1,55 @@
+.Login {
+  background-color: #292c43;
+  color: #292c43;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__Form {
+    font-weight: 400;
+    font-size: 25px;
+    background-color: white;
+    border-radius: 5px;
+    border: 2px solid white;
+    height: 350px;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    &__Container {
+      flex: 1;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      &--username {
+        width: 100%;
+      }
+      &--password {
+        width: 100%;
+      }
+      &--button {
+        width: 100%;
+      }
+      input[type="text"] {
+        width: 70%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      button {
+        margin-top: 10px;
+        padding: 12px 20px;
+        width: 70%;
+        background-color: #2f334d;
+        color: white;
+        font-size: 20px;
+        font-weight: 500;
+        cursor: pointer;
+      }
+    }
+  }
+}
