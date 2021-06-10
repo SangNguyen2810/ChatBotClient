@@ -8,24 +8,26 @@ import {
 import './App.css';
 import SideBar from './components/SideBar'
 import Login from './components/Login'
-import Dashboard from './components/Dashboard'
+import Dashboard from './components/Dashboard/Dashboard'
 
 export default function App() {
   return (
-    <Router>
-      <div>
+    <div className="App">
+      <Router>
         <Switch>
-          <Route path='/'>
-            <Login/>
+          <Route path='/login' >
+            <Login />
           </Route>
-          <Route path='/dashboard'>
-            <Dashboard/>
+          <Route path='/dashboard' >
+            <Dashboard />
           </Route>
         </Switch>
-      </div>
 
 
-    </Router>
+
+      </Router>
+    </div>
+
   )
 
 

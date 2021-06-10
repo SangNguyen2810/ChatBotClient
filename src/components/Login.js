@@ -6,6 +6,8 @@ import dbError from "../static/DbError";
 import {INPUT_BOX_TYPE} from "../constant/InputBoxType"
 import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useHistory } from "react-router-dom";
+
 
 export default function Login() {
   const [count, setCount] = useState(0);
@@ -20,6 +22,7 @@ export default function Login() {
   const [error, setError] = useState('');
   const [isRegister, setIsRegister] = useState(false);
   const userInfo = useSelector((state) => state.login);
+  const history = useHistory();
 
   function handleError(err) {
     notify(err)
@@ -34,7 +37,11 @@ export default function Login() {
     apiUtils.login({username, password})
       .then((data) => {
         if (data) {
-          handleError(data.err);
+          if(data.err){
+            handleError(data.err);
+          }else{
+            history.push('/dashboard');
+          }
         }
       })
       .catch((err) => {
