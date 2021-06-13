@@ -3,7 +3,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  Redirect
 } from "react-router-dom";
 import './App.css';
 import SideBar from './components/SideBar'
@@ -20,6 +21,9 @@ export default function App() {
           </Route>
           <Route path='/dashboard' >
             <Dashboard />
+          </Route>
+          <Route path='/' >
+            <Redirect to="/dashboard" />
           </Route>
         </Switch>
 

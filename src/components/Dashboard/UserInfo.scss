@@ -1,0 +1,20 @@
+.UserInfo{
+  color: white;
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content:space-between;
+  margin-top: 50px;
+
+  &__name{
+    font-weight:500;
+    font-size:22px;
+  }
+  &__addFriend{
+    color: #a5abcc;
+    cursor:pointer;
+    &:hover{
+      color: white;
+    }
+  }
+}

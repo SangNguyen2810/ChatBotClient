@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './Center.scss'
+import UserInfo from './UserInfo'
+import ConversationContainer from './ConversationContainer'
 
 export default function Center() {
   // Declare a new state variable, which we'll call "count"
@@ -7,6 +9,10 @@ export default function Center() {
 
   return (
     <div className="Center">
+      <div className="Center__Container">
+        <UserInfo />
+        <ConversationContainer/>
+      </div>
 
     </div>
   );

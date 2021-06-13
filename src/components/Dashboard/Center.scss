@@ -1,4 +1,9 @@
 .Center{
   width: 400px;
   background-color:#292C43;
+
+  &__Container{
+    margin-left: 30px;
+    margin-right: 30px;
+  }
 }
