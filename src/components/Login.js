@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from 'react';
-import {useSelector} from 'react-redux'
+import {useSelector, useDispatch} from 'react-redux'
 import * as apiUtils from '../utils/api/api';
 import './Login.scss'
 import dbError from "../static/DbError";
 import {INPUT_BOX_TYPE} from "../constant/InputBoxType"
 import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useHistory } from "react-router-dom";
+import {useHistory} from "react-router-dom";
+import {logIn,logOut} from "../redux-store/features/userReducer";
 
 
 export default function Login() {
@@ -21,25 +22,38 @@ export default function Login() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [error, setError] = useState('');
   const [isRegister, setIsRegister] = useState(false);
-  const userInfo = useSelector((state) => state.login);
+  const [didClickLogin, setDidClickLogin] = useState(false);
+
   const history = useHistory();
+
+  const dispatch = useDispatch()
+
+
+  const userInfo = useSelector((state) => {
+    console.log("Sang dep trai state:",state);
+    return state.userInfo
+  });
+
 
   function handleError(err) {
     notify(err)
   }
 
-  function changePage(){
+  function changePage() {
     setIsRegister(!isRegister);
   }
 
   function login(e) {
     e && e.preventDefault();
+    setDidClickLogin(true);
+
     apiUtils.login({username, password})
       .then((data) => {
         if (data) {
-          if(data.err){
+          dispatch(logIn(data))
+          if (data.err) {
             handleError(data.err);
-          }else{
+          } else {
             history.push('/dashboard');
           }
         }
@@ -52,15 +66,15 @@ export default function Login() {
 
   function register(e) {
     e && e.preventDefault();
-    apiUtils.register({username, password, email, firstName, lastName,dateOfBirth})
+    apiUtils.register({username, password, email, firstName, lastName, dateOfBirth})
       .then((data) => {
         if (data) {
-          if(data.err){
+          if (data.err) {
             handleError(data.err);
-          }else{
+          } else {
             changePage();
           }
-        }else{
+        } else {
           notify("There was something wrong!!!")
         }
       })
@@ -151,7 +165,7 @@ export default function Login() {
                      }}/>
             </div>
             <div className="Login__Form__Container--button--register">
-              <button onClick={(e)=>register(e)}>Register</button>
+              <button onClick={(e) => register(e)}>Register</button>
             </div>
           </div>
         </div>
@@ -179,15 +193,23 @@ export default function Login() {
             </div>
 
             <div className="Login__Form__Container--button--login">
-              <button onClick={(e) => {
-                login(e)
-              }}>Log In
+              <button
+                onClick={(e) => {
+                  login(e)
+                }}
+                disabled={didClickLogin}
+                style={{backgroundColor: didClickLogin ? '#020629' : '#2f334d'}}>
+                Log In
               </button>
             </div>
             <div className="Login__Form__Container--button--register">
-              <button onClick={(e) => {
-                changePage(e)
-              }}>Register
+              <button
+                onClick={(e) => {
+                  changePage(e)
+                }}
+                disabled={didClickLogin}
+                style={{backgroundColor: didClickLogin ? '#020629' : '#2f334d'}}>
+                Register
               </button>
             </div>
           </div>

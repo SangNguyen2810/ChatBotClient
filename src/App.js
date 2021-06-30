@@ -23,7 +23,7 @@ export default function App() {
             <Dashboard />
           </Route>
           <Route path='/' >
-            <Redirect to="/dashboard" />
+            <Redirect to="/login" />
           </Route>
         </Switch>
 

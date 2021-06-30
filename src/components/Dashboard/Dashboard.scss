@@ -1,9 +1,18 @@
-.Dashboard{
+.dashboard{
   width: 100%;
   height: 100vh;
-  border-radius: 10px;
   display: flex;
   flex-direction: row;
   color: white;
+  background-color:#2F334D;
+  justify-content:center;
+  align-items: center;
+  &__loadingContainer{
+    display: flex;
+    width: 200px;
+    height:200px;
+    &__loading{
 
+    }
+  }
 }

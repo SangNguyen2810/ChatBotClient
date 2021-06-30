@@ -1,8 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
-import loginReducer from './features/loginReducer'
-
+import userInfo from './features/userReducer'
+import convInfo from './features/conversationReducer'
 export default configureStore({
   reducer: {
-    login: loginReducer
+    userInfo,
+    convInfo
   }
 })
