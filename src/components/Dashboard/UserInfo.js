@@ -13,8 +13,8 @@ export default function UserInfo() {
   if(convInfo.loading){
     return(
       <div className="userInfo">
-        <Skeleton width="80px" height="50px"/>
-        <Skeleton width="200px" height="50px"/>
+        <Skeleton width="80px" height="40px"/>
+        <Skeleton width="200px" height="40px"/>
       </div>
     )
   }else return (

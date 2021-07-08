@@ -4,8 +4,20 @@ import './Skeleton.scss'
 
 
 export default function Skeleton(props) {
-  const {width, height} = props;
+  let {width, height, style} = props;
+  if(width == undefined){
+    width = '100%'
+  }
+  if(height == undefined){
+    height = '100%'
+  }
+
+  let styleInline = {
+    width,
+    height,
+    ...style
+  }
   return (
-    <div style={{width,height}} className="skeleton"/>
+    <div style={styleInline} className="skeleton"/>
   );
 }
