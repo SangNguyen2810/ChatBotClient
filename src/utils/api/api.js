@@ -3,7 +3,7 @@ import FakeConversationInfo from "../../constant/FakeConversationInfo";
 
 export const register = (userInfo) => {
   return new Promise((resolve, reject) => {
-    axios.post('http://localhost:8000/user/register', {
+    axios.post('https://chatbot-saqa.herokuapp.com/user/register', {
       ...userInfo,
     }, {
       withCredentials: true,
@@ -20,7 +20,7 @@ export const register = (userInfo) => {
 export const login = (userInfo) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      axios.post('http://localhost:8000/user/login', {
+      axios.post('https://chatbot-saqa.herokuapp.com/user/login', {
         ...userInfo
       }, {
         withCredentials: true,

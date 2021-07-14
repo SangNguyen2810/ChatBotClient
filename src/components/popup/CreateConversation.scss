@@ -1,0 +1,69 @@
+.createChannel {
+  position: relative;
+  width: 25%;
+  height: 40%;
+  background-color: #292c43;
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  &__title {
+    flex: 1;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #2f334d;
+    font-size: 24px;
+    &__content{
+
+    }
+    &__close{
+      position: absolute;
+      right: 10px;
+      top: 5px;
+      cursor: pointer;
+      img{
+        width:20px;
+        height:20px;
+        color: white;
+      }
+    }
+  }
+  &__channelInfo{
+    flex: 10;
+    margin-top: 20px;
+    &__title{
+      text-align: left;
+      padding-left: 20px;
+    }
+    &__input{
+      margin-top: 10px;
+      input[type="text"]{
+        width: 70%;
+        padding: 16px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border-radius: 8px;
+        background-color: #2F334D;
+        border: none;
+        color: white;
+      }
+    }
+  }
+  &__channelFooter{
+    flex: 4;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    button{
+      margin-right: 20px;
+      background-color: #476EEF;
+      color: white;
+      padding: 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      border: 0;
+      font-size: 16px;
+    }
+  }
+}

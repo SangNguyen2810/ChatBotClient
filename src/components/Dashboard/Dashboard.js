@@ -4,14 +4,13 @@ import './Dashboard.scss'
 import Center from './Center'
 import Right from './Right'
 import * as apiUtils from '../../utils/api/api';
-import {useDispatch} from 'react-redux'
+import {useDispatch,useSelector} from 'react-redux'
 import {firstLoaded} from "../../redux-store/features/conversationReducer";
+import PopupManager from '../popup/PopupManager';
 
 
 export default function Dashboard() {
-  // Declare a new state variable, which we'll call "count"
-  const [count, setCount] = useState(0);
-  const [isLoading, setIsLoading] = useState(true);
+
   const dispatch = useDispatch()
 
 
@@ -29,6 +28,7 @@ export default function Dashboard() {
 
   return (
     <div className="dashboard">
+      <PopupManager />
       <Left/>
       <Center/>
       <Right/>
