@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './ConversationContainer.scss'
+import './ChannelContainer.scss'
 import Search from './Search'
-import ListConversation from './ListConversation'
+import ListChannel from './ListChannel'
 import {useSelector} from "react-redux";
 import Skeleton from "./Skeleton";
 
@@ -11,9 +11,9 @@ export default function Center() {
   const NUMBER_OF_CONVERSATION_LOADING = 10;
 
   return (
-    <div className="conversationContainer">
+    <div className="channelContainer">
       <Search />
-      <ListConversation />
+      <ListChannel />
     </div>
   );
 }

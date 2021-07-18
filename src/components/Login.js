@@ -115,6 +115,8 @@ export default function Login() {
         setDateOfBirth(value);
         break;
       }
+      default:
+        break;
 
     }
   }

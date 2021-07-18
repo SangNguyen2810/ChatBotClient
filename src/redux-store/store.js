@@ -1,11 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import userInfo from './features/userReducer'
-import convInfo from './features/conversationReducer'
+import channelInfo from './features/channelReducer'
 import popupManager from './features/popupReducer'
 export default configureStore({
   reducer: {
     userInfo,
-    convInfo,
+    channelInfo,
     popupManager
   }
 })

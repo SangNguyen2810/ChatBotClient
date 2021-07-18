@@ -1,10 +1,10 @@
 import {createSlice} from '@reduxjs/toolkit'
 
-export const conversation = createSlice({
+export const channelInfo = createSlice({
   name: 'userInfo',
   initialState: {
     loading: true,
-    convs: []
+    channels: []
   },
   reducers: {
     firstLoaded: (state, action) => {
@@ -14,6 +14,6 @@ export const conversation = createSlice({
   }
 })
 
-export const {firstLoaded} = conversation.actions
+export const {firstLoaded} = channelInfo.actions
 
-export default conversation.reducer
+export default channelInfo.reducer

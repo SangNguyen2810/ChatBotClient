@@ -1,23 +1,32 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './UserInfo.scss'
 import Skeleton from './Skeleton'
-import {useSelector,useDispatch} from "react-redux";
+import * as Redux from "react-redux";
 import {show} from "../../redux-store/features/popupReducer";
+import * as apiUtils from '../../utils/api/api';
+import { POPUP_TYPE } from '../../constant/PopupType';
+import {useHandleCreateChannel} from '../../utils/hooks/user'
 
-export default function UserInfo() {
+function UserInfo(props) {
   // Declare a new state variable, which we'll call "count"
-  const convInfo = useSelector((state) => {
-    return state.convInfo
+  const channelInfo = Redux.useSelector((state) => {
+    return state.channelInfo
   });
 
-  const dispatch = useDispatch()
+  const dispatch = Redux.useDispatch()
+
+  const userInfo = useHandleCreateChannel('123');
+
+  React.useEffect(()=>{
+
+  })
 
   const openPopupChannel = () => {
-    dispatch(show())
+    dispatch(show({popupType: POPUP_TYPE.CREATE_CHANNEL}))
   }
 
 
-  if(convInfo.loading){
+  if(channelInfo.loading){
     return(
       <div className="userInfo">
         <Skeleton width="80px" height="40px"/>
@@ -31,3 +40,4 @@ export default function UserInfo() {
     </div>
   );
 }
+export default React.memo(UserInfo);

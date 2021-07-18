@@ -5,12 +5,12 @@ import Skeleton from './Skeleton'
 
 export default function Search() {
   // Declare a new state variable, which we'll call "count"
-  const convInfo = useSelector((state) => {
-    return state.convInfo
+  const channelInfo = useSelector((state) => {
+    return state.channelInfo
   });
 
 
-  if (convInfo.loading) {
+  if (channelInfo.loading) {
     return (
       <div className="search">
         <Skeleton width="100%" height="100%"/>

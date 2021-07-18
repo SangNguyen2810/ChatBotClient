@@ -1,24 +1,21 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, memo} from 'react';
 import Left from './Left'
 import './Dashboard.scss'
 import Center from './Center'
 import Right from './Right'
 import * as apiUtils from '../../utils/api/api';
 import {useDispatch,useSelector} from 'react-redux'
-import {firstLoaded} from "../../redux-store/features/conversationReducer";
+import {firstLoaded} from "../../redux-store/features/channelReducer";
 import PopupManager from '../popup/PopupManager';
 
 
-export default function Dashboard() {
-
+function Dashboard(props) {
   const dispatch = useDispatch()
-
-
   useEffect(() => {
-    apiUtils.getConversationInfo('123')
-      .then((convs) => {
-        console.log(convs);
-        dispatch(firstLoaded({loading: false, convs}))
+    apiUtils.getChannelInfos('123')
+      .then((chans) => {
+        console.log(chans);
+        dispatch(firstLoaded({loading: false, chans}))
       })
       .catch((e) => {
 
@@ -35,3 +32,5 @@ export default function Dashboard() {
     </div>
   );
 }
+
+export default memo(Dashboard);

@@ -1,17 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 import './Center.scss'
 import UserInfo from './UserInfo'
-import ConversationContainer from './ConversationContainer'
+import ChannelContainer from './ChannelContainer'
 import { useSelector } from 'react-redux'
 
-export default function Center() {
+function Center(props) {
   return (
     <div className="center">
       <div className="center__container">
-        <UserInfo />
-        <ConversationContainer/>
+        <UserInfo sang={123}/>
+        <ChannelContainer/>
       </div>
 
     </div>
   );
 }
+
+export default memo(Center);
