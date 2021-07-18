@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Right.scss'
 
-export default function Right() {
-  // Declare a new state variable, which we'll call "count"
-  const [count, setCount] = useState(0);
+function Right(props) {
+
 
   return (
     <div className="Right">
@@ -11,3 +10,5 @@ export default function Right() {
     </div>
   );
 }
+
+export default React.memo(Right)

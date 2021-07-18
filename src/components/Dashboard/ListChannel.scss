@@ -1,4 +1,28 @@
 .listChannel{
   width: 100%;
   margin-top:10px;
+  position:relative;
+  overflow-x: hidden;
+  padding-right: 10px;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #a5abcc; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #a5abcc; 
 }

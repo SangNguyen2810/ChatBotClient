@@ -4,8 +4,8 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-top: 50px;
-
+  flex: 1;
+  margin-top:20px;
   &__name {
     font-weight: 500;
     font-size: 22px;

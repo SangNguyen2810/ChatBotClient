@@ -1,0 +1,17 @@
+.scrollBar {
+  position: absolute;
+  width: 25px;
+  transition: opacity 200ms ease 0s;
+  opacity: 1;
+  right: -25px;
+  top: 2px;
+  height: 18vh;
+  &__item {
+    background-color: #a5abcc;
+    width: 4px;
+    left: 8px;
+    position: absolute;
+    height: 18vh;
+    border-radius: 3px;
+  }
+}
